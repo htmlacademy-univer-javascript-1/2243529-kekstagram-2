@@ -3,15 +3,12 @@ function random(x, y) {
   const z = x - 0.5 + Math.random() * (y - x + 1);
   return Math.round(z);
 }
-
-console.log ( 'Рандомное число',random(10, 110) );
+random(10, 110);
 //
 
 //Функция для проверки максимальной длины строки
 function MaxLine(str,maxlong) {
-  if (str.length<=maxlong) {return true;}
-  
+  return str.length<=maxlong;
 }
-MaxLine('Пример коментария ',140);
-
+MaxLine('Пример коментария',140);
 //
