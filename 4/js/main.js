@@ -9,8 +9,8 @@ console.log ( 'Рандомное число',random(10, 110) );
 
 //Функция для проверки максимальной длины строки
 function MaxLine(str,maxlong) {
-  if (str.length<=maxlong) {console.log('true');}
-  else {console.log('false');}
+  if (str.length<=maxlong) {return true;}
+  
 }
 MaxLine('Пример коментария ',140);
 
