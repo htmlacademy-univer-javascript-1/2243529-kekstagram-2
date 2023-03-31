@@ -1,22 +1,49 @@
-import{random} from './utils.js';
-import{MaxLine} from './utils.js';
-import{MadeCommentId} from './utils.js';
-
-import{INdescription} from './data.js';
-import{INname} from './data.js';
-import{INmessage} from './data.js';
-if (MaxLine(INmessage[random(0, INmessage.length-1)].length,140)) {
-  const MadeComments=()=>({
-    id:MadeCommentId(),
-    avatar: `img/avatar-${random(1,6)}.svg`,
-    message: INmessage[random(0, INmessage.length-1)],
-    name: INname[random(0, INname.length-1)]
-  });
-  const MadeMainArray=(id)=> ({
-    id:id,
-    url: `photos/${id}.jpg`,
-    descrition: INdescription[random(0,INdescription.length-1)],
-    comments:Array.from({length:random(1,5)}, MadeComments)
-  });
-  const MainArray =Array.from({length:25}, (v,k)=> MadeMainArray (k+1));
+// Функция, возвращающая случайное целое число из переданного диапазона включительно
+function random(x, y) {
+  const z = x - 0.5 + Math.random() * (y - x + 1);
+  return Math.round(z);
 }
+random(10, 110);
+//
+
+//Функция для проверки максимальной длины строки
+function MaxLine(str,maxlong) {
+  return str.length<=maxlong;
+}
+MaxLine('Пример коментария',140);
+//
+
+const INname=[
+  'Кирилл',
+  'Матвей',
+  'Михаил',
+  'Вера',
+  'Данила',
+  'Богдан',
+  'Марат',
+  'Марк',
+  'Анфиса',
+  'Денис'
+];
+
+const INmessage=['Всё отлично!',
+  'В целом всё неплохо. Но не всё.',
+  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
+  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
+  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
+  'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'];
+const result = [...Array(7).keys()].map((i) => (
+  { id:i + 1,
+    url:`photos/${i + 1}.jpg`,
+    description:[],
+    likes:random(15,200),
+    comments:{
+      id:random(1,25),
+      avatar: `img/avatar-${random(1,6)}.svg`,
+      message:INmessage[random(1,6)],
+      name:INname[random(1,10)]
+    }
+  }
+
+));
+
