@@ -18,8 +18,11 @@ const MadeCommentId=()=> {
   OriginalCommentIds.add(commentId);
   return commentId;
 };
+const isEscapeKey = (evt) => evt.key === 'Escape';
 //
 export{random};
 export{MaxLine};
 export{MadeCommentId};
+export{isEscapeKey};
+ 
 

@@ -10,7 +10,6 @@ const MadeComment=()=> ({
   name: INname[random(0, INname.length-1)],
   message:INmessage[random(0, INmessage.length-1)],
 });
-
 const MadeMainArray=(id)=> ({
   id:id,
   url: `photos/${id}.jpg`,
@@ -18,5 +17,5 @@ const MadeMainArray=(id)=> ({
   likes:random(15,200),
   comments:Array.from({length:random(1,5)}, MadeComment)
 });
-const MainArray =Array.from({length:25}, (v,k)=> MadeMainArray (k+1));
-print( MainArray);
+
+export{MadeMainArray};
