@@ -18,4 +18,5 @@ const MadeMainArray=(id)=> ({
   likes:random(15,200),
   comments:Array.from({length:random(1,5)}, MadeComment)
 });
+
 export{MadeMainArray};
