@@ -10,7 +10,6 @@ const MadeComment=()=> ({
   name: INname[random(0, INname.length-1)],
   message:INmessage[random(0, INmessage.length-1)],
 });
-
 const MadeMainArray=(id)=> ({
   id:id,
   url: `photos/${id}.jpg`,
